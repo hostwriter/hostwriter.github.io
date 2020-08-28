@@ -1,0 +1,36 @@
+{
+  "name": "hostwriter.github.io",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/hostwriter/hostwriter.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "http-server & webpack -d --watch",
+    "test": "jest tests --watch --verbose --coverage=true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hostwriter/hostwriter.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hostwriter/hostwriter.github.io/issues"
+  },
+  "homepage": "https://github.com/hostwriter/hostwriter.github.io#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/register": "^7.10.5",
+    "babel-loader": "^8.1.0",
+    "cypress": "^4.12.1",
+    "jest": "^26.4.2",
+    "jsdom": "^16.3.0",
+    "mithril-query": "^3.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "mithril": "^2.0.4"
+  }
+}
