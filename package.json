@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "http-server & webpack -d --watch",
-    "test": "jest tests --watch --verbose --coverage=true"
+    "test": "jest tests --watch --verbose --coverage=true",
+    "build": "webpack --progress --config webpack.config.js"
   },
   "repository": {
     "type": "git",
