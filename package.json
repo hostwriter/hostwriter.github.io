@@ -25,12 +25,13 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/register": "^7.10.5",
     "babel-loader": "^8.1.0",
-    "cypress": "^4.12.1",
+    "copy-webpack-plugin": "^6.0.4",
     "jest": "^26.4.2",
     "jsdom": "^16.3.0",
     "mithril-query": "^3.1.0",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-copy-plugin": "0.0.4"
   },
   "dependencies": {
     "mithril": "^2.0.4"

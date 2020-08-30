@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+var webpack = require('webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -10,6 +11,11 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             m: 'mithril'
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: 'index.html' }
+            ]
         })
     ],
     module: {
