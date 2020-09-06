@@ -14,7 +14,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: 'index.html' }
+                { from: 'index.html' },
+                { from: 'src/styles.css' }
             ]
         })
     ],
