@@ -9,7 +9,7 @@
 - Xiaosong Wang
 ---
 ## How to use this code:
-### First things first, instal dependencie
+### First things first, instal dependencies
 `npm install`
 
 
