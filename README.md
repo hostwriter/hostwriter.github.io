@@ -1,4 +1,5 @@
 ![Node.js CI](https://github.com/hostwriter/hostwriter.github.io/workflows/Node.js%20CI/badge.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/hostwriter/hostwriter.github.io/badge.svg?branch=master)](https://coveralls.io/github/hostwriter/hostwriter.github.io?branch=master)
 # Host Writer
 **Web application front-end for GPT-3 Comedy Writer**
 **MSU Denver Senior Project, Class of 2020**
@@ -20,11 +21,11 @@
 
 ### Testing
 #### Just once, with coverage
-`npm test`
+`npm run test`
 #### Continually run tests on code change (Do this for TDD)
-`npm test-watch`
+`npm run test-watch`
 
 
 ### Deployment
 #### Build
-`npm  build`
+`npm run build`

@@ -5,7 +5,7 @@ const path = require('path')
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, './bin'),
+        path: path.resolve(__dirname, './'),
         filename: 'app.js',
     },
     plugins: [
@@ -14,7 +14,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: 'index.html' },
+                { from: 'src/index.html' },
                 { from: 'src/styles.css' }
             ]
         })
