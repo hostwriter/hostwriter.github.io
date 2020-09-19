@@ -16,6 +16,7 @@ global.requestAnimationFrame = dom.window.requestAnimationFrame
 // Require Mithril to make sure it loads properly.
 require("mithril")
 
+// Mock local storage
 global.localStorage = (function() {
     var store = {};
 

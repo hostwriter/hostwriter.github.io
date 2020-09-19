@@ -7,7 +7,8 @@
     "start": "http-server & webpack -d --watch",
     "build": "webpack --progress --config webpack.config.js",
     "test": "jest tests --verbose --coverage=true",
-    "test-watch": "jest tests --watch --verbose --coverage=true"
+    "test-watch": "jest tests --watch --verbose --coverage=true",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@babel/register": "^7.10.5",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.0.4",
+    "coveralls": "^3.1.0",
     "http-server": "^0.12.3",
     "jest": "^26.4.2",
     "jsdom": "^16.3.0",
