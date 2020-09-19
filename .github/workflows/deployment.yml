@@ -34,3 +34,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: docs
         FOLDER: .
+  finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@docs
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel-finished: true
