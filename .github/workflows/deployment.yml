@@ -24,6 +24,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        COVERALLS_REPO_TOKEN: 9BFoRfhH5Xwp78apSeZsmiuwIvEgYQ2WQ
     - run: npm install
     - run: npm run build --if-present
     - run: npm test
