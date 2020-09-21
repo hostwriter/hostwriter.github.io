@@ -8,6 +8,7 @@
 - Bobby Wettig
 - Remi Arata
 - Xiaosong Wang
+- Jesus Torres
 ---
 ## How to use this code:
 ### First things first, instal dependencies
