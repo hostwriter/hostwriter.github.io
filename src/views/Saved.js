@@ -1,17 +1,16 @@
+const JokeObject = require('../components/JokeObject')
 const Jokes = require('../models/Joke')
-const JokeObject = require('./JokeObject')
 
 module.exports = {
-
-    oninit(vnode) {
-        Jokes.load()
+    oninit() {
+        Jokes.loadSaved()
     },
 
-    view(vnode) {
-        return(
-            <div>
-                {Jokes.list.length 
-                    ? (Jokes.list.map(joke => {
+    view() {
+        return (
+            <div class="container">
+                {Jokes.saved.length
+                    ? (Jokes.saved.map(joke => {
                         return [
                             <JokeObject {...joke}/>,
                             <br />
