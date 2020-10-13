@@ -12,10 +12,7 @@ module.exports = {
             <div>
                 {Jokes.list.length 
                     ? (Jokes.list.map(joke => {
-                        return [
-                            <JokeObject {...joke}/>,
-                            <br />
-                        ]
+                        return (<JokeObject {...joke}/>)
                     }))
                     : <h1>Loading...</h1>
                 }

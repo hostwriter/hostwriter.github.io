@@ -5,7 +5,8 @@ module.exports = {
 
     view() {
         return (
-            <div class={"container pt-5"}>
+            <div class={"container-fluid p-5"}>
+                <h1 class="text-center pb-1 text-primary">New jokes</h1>
                 <JokeContainer />
             </div>
         )

@@ -5,7 +5,7 @@ module.exports = {
         return (
             <div>
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-                    <div class="container">
+                    <div class="container-fluid">
                     <a class="navbar-brand" href="#">GPT Comedy</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@ module.exports = {
                     </div>
                     </div>
                 </nav>
-                <div class="pt-5 mt-5">{vnode.children}</div>
+                <div class="pt-5">{vnode.children}</div>
             </div>
         )
     }

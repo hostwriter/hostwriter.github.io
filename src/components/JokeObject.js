@@ -5,7 +5,7 @@ module.exports = {
 
     view(vnode) {
         return (
-            <div class={"card shadow p-3 mb-5 bg-white rounded"}>
+            <div class={"card shadow mb-3 p-3 bg-white rounded"}>
                 <div class={"card-body"}>
                     <div
                         class={"card-text"}
@@ -17,7 +17,7 @@ module.exports = {
                         ? [
                             <br />,
                             <div className={"punchline"}>
-                                {vnode.attrs.comments.map(comment => {
+                                {vnode.attrs.comments && vnode.attrs.comments.map(comment => {
                                     return comment.content
                                 })}
                             </div>
