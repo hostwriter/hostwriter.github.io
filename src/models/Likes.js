@@ -13,10 +13,10 @@ let Status = {
 
     add: (id, action) => {
         Status.load()
-        if (Status[action].indexOf(id) !== -1) {
-            return
-        }
-        Status[action].push(id)
+        //if (Status[action].indexOf(id) !== -1) {
+        //    return
+        //}
+        //Status[action].push(id)
         Status.save()
 
         return m.request({
