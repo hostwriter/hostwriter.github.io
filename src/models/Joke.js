@@ -1,6 +1,8 @@
 const m = require('mithril')
+const Likes = require('./Likes')
+const config = require('../config')
 
-const url = "https://64c05aad7l.execute-api.us-east-2.amazonaws.com/Stage"
+const url = config.url()
 
 let Joke = {
 
@@ -49,11 +51,13 @@ let Joke = {
     // Like a joke
     like: (id) => {
         console.log("Like! id:", id)
+        Likes.add(id, 'like')
     },
 
     // Dislike a joke
     dislike: (id) => {
         console.log("Dislike! id:", id)
+        Likes.add(id, 'dislike')
     }
 
 }
