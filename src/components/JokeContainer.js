@@ -1,6 +1,5 @@
 const Jokes = require('../models/Joke')
-const { statusById } = require('../models/Likes')
-const Status = require('../models/Likes')
+const Status = require('../models/Status')
 const JokeObject = require('./JokeObject')
 
 module.exports = {

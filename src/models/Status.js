@@ -1,4 +1,3 @@
-const Joke = require('./Joke')
 const url = require('../config').url()
 
 const actions = [
@@ -20,16 +19,15 @@ let Status = {
     },
 
     add: (id, action) => {
+        console.log(`adding ${action} on id: ${id}`)
         Status.load()
-        console.log(Status)
-        if (Status[action].indexOf(id) !== -1) {
-           return
-        }
+
         Status[action].push(id)
         Status.save()
 
-        if (status !== 'saved') {
-            return m.request({
+        // Tell the API to increment
+        if (action !== 'saved') {
+            m.request({
                 method: "PUT",
                 url: `${url}/${id}/${action}`,
             })
@@ -37,6 +35,27 @@ let Status = {
                 console.log(`${action} response: ${result}`)
             })
         }
+    },
+
+    remove: (id, action) => {
+        console.log(`removing ${action} on id: ${id}`)
+        Status.load()
+
+        let index = Status[action].indexOf(id)
+        delete Status[action][index]
+        Status.save()
+
+        // TODO - Implement when supported by the API
+        // Tell the API to decrement
+        // if (action !== 'saved') {
+        //     m.request({
+        //         method: "PUT",
+        //         url: `${url}/${id}/${action}`,
+        //     })
+        //         .then(function(result) {
+        //             console.log(`${action} response: ${result}`)
+        //         })
+        // }
     },
 
     save: () => {
@@ -63,7 +82,7 @@ let Status = {
             disliked: Status.isDisliked(id),
             saved: Status.isSaved(id),
         }
-    }
+    },
 }
 
 module.exports = Status

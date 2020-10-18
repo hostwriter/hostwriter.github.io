@@ -16,14 +16,14 @@ module.exports = {
                             <a class="nav-link" href="/#!/new">New</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#!/saved">Saved</a>
+                            <a class="nav-link">Saved<span class="badge">Coming soon!</span></a>
                         </li>
                         </ul>
                         <span class="navbar-text">GPT Comedy</span>
                     </div>
                     </div>
                 </nav>
-                <div class="pt-5">{vnode.children}</div>
+                <div class="pt-5 bg-light">{vnode.children}</div>
             </div>
         )
     }

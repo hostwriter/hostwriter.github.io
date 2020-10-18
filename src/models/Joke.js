@@ -1,5 +1,5 @@
 const m = require('mithril')
-const Likes = require('./Likes')
+const Status = require('./Status')
 const config = require('../config')
 
 const url = config.url()
@@ -43,22 +43,44 @@ let Joke = {
     },
 
     // Save a joke
-    save: (id) => {
+    save: (id, saved) => {
         console.log("Save! id:", id)
-
+        if (saved) {
+            Status.remove(id, 'saved')
+        } else {
+            Status.add(id, 'saved')
+        }
     },
 
-    // Like a joke
-    like: (id) => {
+    like: (id, liked) => {
         console.log("Like! id:", id)
-        Likes.add(id, 'like')
+        let index = Joke.list.findIndex(v => v.id == id)
+        if (liked) {
+            // TODO - uncomment this when the API supports un-liking
+            // console.log(`decrementing like of id: ${id}`)
+            // Status.remove(id, 'like')
+            // Joke.list[index].likes -= 1
+        } else {
+            console.log(`incrementing like of id: ${id}`)
+            Status.add(id, 'like')
+            Joke.list[index].likes += 1
+        }
     },
 
-    // Dislike a joke
-    dislike: (id) => {
+    dislike: (id, disliked) => {
         console.log("Dislike! id:", id)
-        Likes.add(id, 'dislike')
-    }
+        let index = Joke.list.findIndex(v => v.id == id)
+        if (disliked) {
+            // TODO - uncomment this when the API supports un-disliking
+            // console.log(`decrementing dislike of id: ${id}`)
+            // Status.remove(id, 'dislike')
+            // Joke.list[index].dislikes -= 1
+        } else {
+            console.log(`incrementing dislike of id: ${id}`)
+            Status.add(id, 'dislike')
+            Joke.list[index].dislikes += 1
+        }
+    },
 
 }
 
