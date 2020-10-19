@@ -19,7 +19,6 @@ let Status = {
     },
 
     add: (id, action) => {
-        console.log(`adding ${action} on id: ${id}`)
         Status.load()
 
         Status[action].push(id)
@@ -38,7 +37,6 @@ let Status = {
     },
 
     remove: (id, action) => {
-        console.log(`removing ${action} on id: ${id}`)
         Status.load()
 
         let index = Status[action].indexOf(id)

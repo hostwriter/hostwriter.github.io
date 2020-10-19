@@ -27,6 +27,12 @@ module.exports = {
                         {vnode.attrs.likes}
                     </i>
                 </span>
+                {vnode.attrs.comments && vnode.attrs.comments.length
+                    ? <span
+                        title={"Comments"}>
+                            <i class={"far fa-comments m-1 float-right"} onclick={() => vnode.attrs.showComments()} />
+                    </span>
+                    : null }
             </div>
         )
     }

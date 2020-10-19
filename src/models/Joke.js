@@ -17,7 +17,6 @@ let Joke = {
             //withCredentials: true,
         })
         .then(function(result) {
-            console.log("got some jokes", result)
             Joke.list = result
         })
     },
@@ -39,12 +38,10 @@ let Joke = {
                 content: "saved joke number 2"
             },
         ]
-        console.log(Joke.saved)
     },
 
     // Save a joke
     save: (id, saved) => {
-        console.log("Save! id:", id)
         if (saved) {
             Status.remove(id, 'saved')
         } else {
@@ -53,32 +50,26 @@ let Joke = {
     },
 
     like: (id, liked) => {
-        console.log("Like! id:", id)
         let index = Joke.list.findIndex(v => v.id == id)
         if (liked) {
             // TODO - uncomment this when the API supports un-liking
-            // console.log(`decrementing like of id: ${id}`)
             // Status.remove(id, 'like')
-            // Joke.list[index].likes -= 1
+            // Joke.list[index].likes = (Joke.list[index].likes || 0) - 1
         } else {
-            console.log(`incrementing like of id: ${id}`)
             Status.add(id, 'like')
-            Joke.list[index].likes += 1
+            Joke.list[index].likes = (Joke.list[index].likes || 0) + 1
         }
     },
 
     dislike: (id, disliked) => {
-        console.log("Dislike! id:", id)
         let index = Joke.list.findIndex(v => v.id == id)
         if (disliked) {
             // TODO - uncomment this when the API supports un-disliking
-            // console.log(`decrementing dislike of id: ${id}`)
             // Status.remove(id, 'dislike')
-            // Joke.list[index].dislikes -= 1
+            // Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) - 1
         } else {
-            console.log(`incrementing dislike of id: ${id}`)
             Status.add(id, 'dislike')
-            Joke.list[index].dislikes += 1
+            Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) + 1
         }
     },
 
