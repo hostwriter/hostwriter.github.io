@@ -14,7 +14,7 @@ module.exports = {
                 <span class={"card-title"}>{vnode.attrs.author}</span>
                 <div class={"card-body"}>
                     <div
-                        class={"card-text"}
+                        class={"card-text cursor-pointer"}
                         onclick={() => this.showBody = true }
                     >
                         {vnode.attrs.title}
