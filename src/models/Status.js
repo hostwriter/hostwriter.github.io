@@ -43,17 +43,16 @@ let Status = {
         delete Status[action][index]
         Status.save()
 
-        // TODO - Implement when supported by the API
         // Tell the API to decrement
-        // if (action !== 'saved') {
-        //     m.request({
-        //         method: "PUT",
-        //         url: `${url}/${id}/${action}`,
-        //     })
-        //         .then(function(result) {
-        //             console.log(`${action} response: ${result}`)
-        //         })
-        // }
+        if (action !== 'saved') {
+            m.request({
+                method: "PUT",
+                url: `${url}/${id}/${action}/remove`,
+            })
+                .then(function(result) {
+                    console.log(`${action} response: ${result}`)
+                })
+        }
     },
 
     save: () => {
