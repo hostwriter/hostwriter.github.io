@@ -40,7 +40,7 @@ let Status = {
         Status.load()
 
         let index = Status[action].indexOf(id)
-        delete Status[action][index]
+        Status[action].splice(index, 1)
         Status.save()
 
         // Tell the API to decrement

@@ -32,19 +32,19 @@ module.exports = {
                         ? [<br />,
                             <span class={"text-muted"}>Comments</span>,
                             <div class={"shadow m-3"}>
-                            <div class={"border bg-light"}>
-                                <div class={"border"}>
-                                    {vnode.attrs.comments && vnode.attrs.comments.map(comment => {
-                                        return (
-                                            <div class={"mb-2"}>
-                                                <div class={"card-title border-top ml-2 font-weight-lighter"}>{comment.author}:</div>
-                                                <div class={"pb-2 ml-3 font-weight-light"}>{comment.body}</div>
-                                                {comment.likes}
-                                            </div>
-                                        )
-                                    })}
+                                <div class={"border bg-light"}>
+                                    <div class={"border"}>
+                                        {vnode.attrs.comments && vnode.attrs.comments.map(comment => {
+                                            return (
+                                                <div class={"mb-2"}>
+                                                    <div class={"card-title border-top ml-2 font-weight-lighter"}>{comment.author}:</div>
+                                                    <div class={"pb-2 ml-3 font-weight-light"}>{comment.body}</div>
+                                                    {comment.likes}
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         ]
                         : null
