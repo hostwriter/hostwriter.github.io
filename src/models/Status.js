@@ -40,20 +40,19 @@ let Status = {
         Status.load()
 
         let index = Status[action].indexOf(id)
-        delete Status[action][index]
+        Status[action].splice(index, 1)
         Status.save()
 
-        // TODO - Implement when supported by the API
         // Tell the API to decrement
-        // if (action !== 'saved') {
-        //     m.request({
-        //         method: "PUT",
-        //         url: `${url}/${id}/${action}`,
-        //     })
-        //         .then(function(result) {
-        //             console.log(`${action} response: ${result}`)
-        //         })
-        // }
+        if (action !== 'saved') {
+            m.request({
+                method: "PUT",
+                url: `${url}/${id}/${action}/remove`,
+            })
+                .then(function(result) {
+                    console.log(`${action} response: ${result}`)
+                })
+        }
     },
 
     save: () => {
