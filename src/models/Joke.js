@@ -1,48 +1,78 @@
+const m = require('mithril')
+const Status = require('./Status')
+const config = require('../config')
 
-const defaultData = [
-    {
-        id: 1,
-        type: "joke",
-        views: 35,
-        likes: 25,
-        dislikes: 2,
-        setup: "Why did the chicken cross the road?",
-        punchLine: "To get to the other side."
-    },
-    {
-        id: 2,
-        type: "joke",
-        views: 15,
-        likes: 5,
-        dislikes: 2,
-        setup: "Why did the computer cross the road?",
-        punchLine: "100110110010101"
-    }
-]
+const url = config.url()
 
-module.exports = {
+let Joke = {
+
+    list: [],
+    saved: [],
 
     // Load the list of jokes from the API
     load: () => {
+        return m.request({
+            method: "GET",
+            url: url,
+            //withCredentials: true,
+        })
+        .then(function(result) {
+            Joke.list = result
+        })
+    },
 
-        // TODO - implement API connection
-        // just give the stub data for now
-        module.exports.jokeList = defaultData
+    loadSaved: () => {
+        // saved jokes
+        // TODO
+        // Get ID's from local storage
+        // request from API
+
+        // just return stubbed data for now
+        Joke.saved = [
+            {
+                id: "1234-abcd",
+                content: "saved joke number 1"
+            },
+            {
+                id: "1235-abcd",
+                content: "saved joke number 2"
+            },
+        ]
     },
 
     // Save a joke
-    save: (id) => {
-
+    save: (id, saved) => {
+        if (saved) {
+            Status.remove(id, 'saved')
+        } else {
+            Status.add(id, 'saved')
+        }
     },
 
-    // Like a joke
-    like: (id) => {
-
+    like: (id, liked) => {
+        let index = Joke.list.findIndex(v => v.id == id)
+        if (liked) {
+            // TODO - uncomment this when the API supports un-liking
+            // Status.remove(id, 'like')
+            // Joke.list[index].likes = (Joke.list[index].likes || 0) - 1
+        } else {
+            Status.add(id, 'like')
+            Joke.list[index].likes = (Joke.list[index].likes || 0) + 1
+        }
     },
 
-    // Dislike a joke
-    dislike: (id) => {
-
-    }
+    dislike: (id, disliked) => {
+        let index = Joke.list.findIndex(v => v.id == id)
+        if (disliked) {
+            // TODO - uncomment this when the API supports un-disliking
+            // Status.remove(id, 'dislike')
+            // Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) - 1
+        } else {
+            Status.add(id, 'dislike')
+            Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) + 1
+        }
+    },
 
 }
+
+module.exports = Joke

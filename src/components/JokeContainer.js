@@ -1,24 +1,24 @@
-
 const Jokes = require('../models/Joke')
+const Status = require('../models/Status')
 const JokeObject = require('./JokeObject')
 
 module.exports = {
 
-    oninit() {
+    oninit(vnode) {
         Jokes.load()
+        Status.load()
     },
 
-    view() {
-        const list = Jokes.jokeList || []
-
+    view(vnode) {
         return(
             <div>
-                {list.map(joke => {
-                    return [
-                        <JokeObject {...joke}/>,
-                        <br />
-                    ]
-                })}
+                {Jokes.list.length 
+                    ? (Jokes.list.map(joke => {
+                        let properties = {...joke, ...Status.statusById(joke.id)}
+                        return (<JokeObject {...properties}/>)
+                    }))
+                    : <h1>Loading...</h1>
+                }
             </div>
         )
     }

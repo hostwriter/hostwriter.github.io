@@ -6,7 +6,7 @@
   "scripts": {
     "start": "http-server & webpack -d --watch",
     "build": "webpack --progress --config webpack.config.js",
-    "test": "jest tests --verbose --coverage=true",
+    "test": "jest tests",
     "test-watch": "jest tests --watch --verbose --coverage=true",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
@@ -37,6 +37,7 @@
     "webpack-copy-plugin": "0.0.4"
   },
   "dependencies": {
+    "bootstrap": "^5.0.0-alpha1",
     "mithril": "^2.0.4"
   }
 }

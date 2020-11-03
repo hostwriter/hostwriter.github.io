@@ -1,4 +1,5 @@
 require('@babel/register')();
+var m = require('mithril')
 
 var jsdom = require("jsdom")
 var dom = new jsdom.JSDOM("", {
