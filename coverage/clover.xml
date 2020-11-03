@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1604376874003" clover="3.2.0">
-  <project timestamp="1604376874003" name="All files">
-    <metrics statements="44" coveredstatements="12" conditionals="16" coveredconditionals="0" methods="20" coveredmethods="1" elements="80" coveredelements="13" complexity="0" loc="44" ncloc="44" packages="2" files="3" classes="3"/>
+<coverage generated="1604378677245" clover="3.2.0">
+  <project timestamp="1604378677245" name="All files">
+    <metrics statements="53" coveredstatements="12" conditionals="22" coveredconditionals="0" methods="22" coveredmethods="1" elements="97" coveredelements="13" complexity="0" loc="53" ncloc="53" packages="2" files="3" classes="3"/>
     <package name="src">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="config.js" path="/home/runner/work/hostwriter.github.io/hostwriter.github.io/src/config.js">
@@ -11,32 +11,38 @@
       </file>
     </package>
     <package name="src.models">
-      <metrics statements="42" coveredstatements="10" conditionals="16" coveredconditionals="0" methods="19" coveredmethods="0"/>
+      <metrics statements="51" coveredstatements="10" conditionals="22" coveredconditionals="0" methods="21" coveredmethods="0"/>
       <file name="Joke.js" path="/home/runner/work/hostwriter.github.io/hostwriter.github.io/src/models/Joke.js">
-        <metrics statements="20" coveredstatements="6" conditionals="10" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <metrics statements="26" coveredstatements="6" conditionals="14" coveredconditionals="0" methods="9" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="78" count="1" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="64" count="1" type="stmt"/>
       </file>
       <file name="Status.js" path="/home/runner/work/hostwriter.github.io/hostwriter.github.io/src/models/Status.js">
-        <metrics statements="22" coveredstatements="4" conditionals="6" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <metrics statements="25" coveredstatements="4" conditionals="8" coveredconditionals="0" methods="12" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -52,13 +58,16 @@
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="86" count="1" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
       </file>
     </package>
   </project>

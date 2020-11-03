@@ -16,7 +16,7 @@ module.exports = {
                             <a class="nav-link" href="/#!/new">New</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Saved<span class="badge">Coming soon!</span></a>
+                            <a class="nav-link" href="/#!/saved">Saved</a>
                         </li>
                         </ul>
                         <span class="navbar-text">GPT Comedy</span>
