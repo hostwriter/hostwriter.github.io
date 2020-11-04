@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.0-alpha1",
-    "mithril": "^2.0.4"
+    "mithril": "^2.0.4",
+    "regenerator-runtime": "^0.13.7"
   }
 }

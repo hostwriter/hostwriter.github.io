@@ -1,4 +1,5 @@
 require('@babel/register')();
+import 'regenerator-runtime/runtime'
 var m = require('mithril')
 
 var jsdom = require("jsdom")
