@@ -15,7 +15,7 @@ module.exports = {
                 {Jokes.list.length 
                     ? (Jokes.list.map((joke, index) => {
                         let properties = {...joke, ...Status.statusById(joke.id), leader: false, position: index % 4}
-                        return (<JokeObject {...properties}/>)
+                        return [<JokeObject {...properties}/>, <br />]
                     }))
                     : <h1>Loading...</h1>
                 }

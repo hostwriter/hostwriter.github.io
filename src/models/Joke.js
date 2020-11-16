@@ -54,6 +54,7 @@ let Joke = {
     save: (id, saved) => {
         if (saved) {
             Status.remove(id, 'saved')
+            Joke.loadSaved()
         } else {
             Status.add(id, 'saved')
         }

@@ -13,18 +13,23 @@ module.exports = {
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="/#!/" >Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/#!/new">New</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/#!/saved">Favorites</a>
                         </li>
                         </ul>
-                        <span class="navbar-text">GPT Comedy</span>
+                        <span class="navbar-nav">
+                            <a class="nav-link mr-auto" href="/#!/about">About GPT Comedy</a>
+                        </span>
                     </div>
                     </div>
                 </nav>
-                </div>,
-                <div class="pt-5 bg-light">{vnode.children}</div>
+            </div>,
+            <div class="pt-5 bg-light">{vnode.children}</div>
         ]
     }
 }
