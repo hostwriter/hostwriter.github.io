@@ -4,7 +4,7 @@ module.exports = {
     view(vnode) {
         return [
             <div>
-                <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+                <nav class="navbar static-top navbar-expand-lg navbar-dark bg-primary">
                     <div class="container-md">
                     <a class="navbar-brand" href="#">GPT Comedy</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
