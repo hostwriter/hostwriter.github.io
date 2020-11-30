@@ -8,6 +8,20 @@ let Joke = {
 
     list: [],
     saved: [],
+    leaders: {
+        likes: {
+            yesterday: [],
+            lastWeek: [],
+            lastMonth: [],
+            allTime: []
+        },
+        dislikes: {
+            yesterday: [],
+            lastWeek: [],
+            lastMonth: [],
+            allTime: []
+        },
+    },
 
     // Load the list of jokes from the API
     load: () => {
@@ -29,33 +43,52 @@ let Joke = {
         
     },
 
+    loadLeaders: () => {
+        return m.request({
+            method: "GET",
+            url: url + "/leaderboard",
+        })
+        .then( (result) => Joke.leaders = result)
+    },
+
     save: (id, saved) => {
         if (saved) {
             Status.remove(id, 'saved')
+            Joke.loadSaved()
         } else {
             Status.add(id, 'saved')
         }
     },
 
-    like: (id, liked) => {
-        let index = Joke.list.findIndex(v => v.id == id)
+    like: (id, liked, leader) => {
         if (liked) {
+            if (!leader) {
+                let index = Joke.list.findIndex(v => v.id == id)
+                Joke.list[index].likes = (Joke.list[index].likes || 0) - 1
+            }
             Status.remove(id, 'like')
-            Joke.list[index].likes = (Joke.list[index].likes || 0) - 1
         } else {
+            if (!leader) {
+                let index = Joke.list.findIndex(v => v.id == id)
+                Joke.list[index].likes = (Joke.list[index].likes || 0) + 1
+            }
             Status.add(id, 'like')
-            Joke.list[index].likes = (Joke.list[index].likes || 0) + 1
         }
     },
 
-    dislike: (id, disliked) => {
-        let index = Joke.list.findIndex(v => v.id == id)
+    dislike: (id, disliked, leader) => {
         if (disliked) {
+            if (!leader) {
+                let index = Joke.list.findIndex(v => v.id == id)
+                Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) - 1
+            }
             Status.remove(id, 'dislike')
-            Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) - 1
         } else {
+            if (!leader) {
+                let index = Joke.list.findIndex(v => v.id == id)
+                Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) + 1
+            }
             Status.add(id, 'dislike')
-            Joke.list[index].dislikes = (Joke.list[index].dislikes || 0) + 1
         }
     },
 

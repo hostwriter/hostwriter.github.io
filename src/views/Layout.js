@@ -2,10 +2,10 @@
 module.exports = {
 
     view(vnode) {
-        return (
+        return [
             <div>
-                <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-                    <div class="container-fluid">
+                <nav class="navbar static-top navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container-md">
                     <a class="navbar-brand" href="#">GPT Comedy</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -13,18 +13,23 @@ module.exports = {
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="/#!/" >Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/#!/new">New</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/#!/saved">Saved</a>
+                            <a class="nav-link" href="/#!/saved">Favorites</a>
                         </li>
                         </ul>
-                        <span class="navbar-text">GPT Comedy</span>
+                        <span class="navbar-nav">
+                            <a class="nav-link mr-auto" href="/#!/about">About GPT Comedy</a>
+                        </span>
                     </div>
                     </div>
                 </nav>
-                <div class="pt-5 bg-light">{vnode.children}</div>
-            </div>
-        )
+            </div>,
+            <div class="pt-5 bg-light">{vnode.children}</div>
+        ]
     }
 }
