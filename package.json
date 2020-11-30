@@ -37,7 +37,9 @@
     "webpack-copy-plugin": "0.0.4"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-alpha1",
-    "mithril": "^2.0.4"
+    "bootstrap": "^5.0.0-alpha2",
+    "mithril": "^2.0.4",
+    "popper.js": "^1.16.1",
+    "regenerator-runtime": "^0.13.7"
   }
 }

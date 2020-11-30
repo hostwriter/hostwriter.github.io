@@ -1,4 +1,5 @@
 const url = require('../config').url()
+const m = require('mithril')
 
 const actions = [
     'like',
