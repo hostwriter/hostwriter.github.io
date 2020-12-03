@@ -12,7 +12,7 @@ module.exports = {
         vnode.attrs.showComments = () => {this.showComments = !this.showComments }
         return (
             <div class={"card"}>
-            <div class={"shadow mb-3 p-3 rounded cursor-pointer " + colors[vnode.attrs.position % 4]} 
+            <div class={"shadow mb-3 p-3 rounded cursor-pointer " + colors[vnode.attrs.position % colors.length]} 
                  onclick={() => this.showBody = true }>
                 <span class={"card-title"}>{vnode.attrs.author}</span>
                 <div class={"card-body"}>
@@ -35,7 +35,7 @@ module.exports = {
                             <div>
                             {vnode.attrs.comments.map((comment, index) => {
                                 return (
-                                    <div class="col-sm align-self-left p-4 w-50">
+                                    <div class="col-sm align-self-left p-4 comment">
                                     <div class={index % 2 == 0 ? "speech-bubble-left" : "speech-bubble-right"}>
                                         <div class={"ml-2 font-weight-lighter"}>{comment.author}:</div>
                                         <div class={"pb-2 ml-3 font-weight-light"}>{comment.body}</div>
