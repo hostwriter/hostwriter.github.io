@@ -1,4 +1,5 @@
 const m = require('mithril')
+const moment = require('moment')
 const Status = require('./Status')
 const config = require('../config')
 
@@ -24,10 +25,13 @@ let Joke = {
     },
 
     // Load the list of jokes from the API
-    load: () => {
+    load: (date) => {
         return m.request({
             method: "GET",
             url: url,
+            params: {
+                date: (date || moment().format('YYYY-MM-DD'))
+            }
         })
         .then( (result) => Joke.list = result )
     },

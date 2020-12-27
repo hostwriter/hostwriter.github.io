@@ -1,11 +1,12 @@
 const Jokes = require('../models/Joke')
 const Status = require('../models/Status')
 const JokeObject = require('./JokeObject')
+const moment = require('moment')
 
 module.exports = {
 
     oninit(vnode) {
-        Jokes.load()
+        Jokes.load(vnode.attrs.date && moment(vnode.attrs.date).format('YYYY-MM-DD') || null)
         Status.load()
     },
 
