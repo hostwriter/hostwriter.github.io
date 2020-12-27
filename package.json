@@ -39,6 +39,8 @@
   "dependencies": {
     "bootstrap": "^5.0.0-alpha2",
     "mithril": "^2.0.4",
+    "mithril-datepicker": "^0.9.3",
+    "moment": "^2.29.1",
     "popper.js": "^1.16.1",
     "regenerator-runtime": "^0.13.7"
   }
